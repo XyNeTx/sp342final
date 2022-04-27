@@ -16,9 +16,18 @@ function checkTicketNo() {
   let num = (document.getElementById("ticknum").value).trim();
   if (isNaN(num)) {
     return false;
-  } else {
+  } 
+  else {
+	  if (num > 5){
+		  return false;
+	  }
+	  else if (num < 1){
+		  return false;
+	  }
+	  else{
 	return true;
   }
+}
 }
 
 function checkfname(){
