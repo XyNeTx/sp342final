@@ -21,13 +21,43 @@ function checkTicketNo() {
   }
 }
 
+function checkfname(){
+	let fname = (document.getElementById("fname").value).trim();
+	if (fname.length != 0){
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+function checklname(){
+	let lname = (document.getElementById("lname").value).trim();
+	if (lname.length != 0){
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 function validateForm(){
 	if(!checkNID()){
 	  alert("Invalid value for National ID!");
 	  document.getElementById("nid").focus();
 	  return false;
 	}else{
-		if(!checkTicketNo()){
+		if(!checkfname()){
+		  alert("Invalid value for First Name!!");
+		  document.getElementById("fname").focus();
+		  return false;
+		}
+		else if(!checklname()){
+		  alert("Invalid value for Last Name!!");
+		  document.getElementById("lname").focus();
+		  return false;
+		}
+		else if(!checkTicketNo()){
 		  alert("Invalid value for No.of tickets!!");
 		  document.getElementById("ticknum").focus();
 		  return false;
